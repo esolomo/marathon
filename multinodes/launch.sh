@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
-MARATHON=http://172.31.3.11:8080
+
+MARATHON=http://ec2-52-31-124-11.eu-west-1.compute.amazonaws.com:8080
 
 for file in nginx.json
 do

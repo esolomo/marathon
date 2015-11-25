@@ -1,9 +1,9 @@
 {
   "id": "web",
   "container": {
-    "type": "DOCKER",
     "docker": {
-      "image": "nginx",
+     "type": "DOCKER",
+      "image": "nginx:latest",
       "network": "BRIDGE",
       "portMappings": [
         { "containerPort": 80, "hostPort": 0, "servicePort": 80, "protocol": "tcp" }
@@ -11,6 +11,16 @@
     }
   },
   "instances": 1,
-  "cpus": 0.5,
-  "mem": 128
+  "cpus": 0.1,
+  "mem": 128,
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "path": "/",
+      "gracePeriodSeconds": 10,
+      "intervalSeconds": 20,
+      "maxConsecutiveFailures": 3
+    }
+  ]
 }

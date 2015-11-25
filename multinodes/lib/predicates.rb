@@ -9,6 +9,10 @@ def slave?(name)
     return /^slave/ =~ name
 end
 
+def infra?(name)
+    return /^infra/ =~ name
+end
+
 def zk?(name)
     return /^zk/ =~ name
 end
